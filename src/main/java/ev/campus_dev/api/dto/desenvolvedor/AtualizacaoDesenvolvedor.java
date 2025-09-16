@@ -1,4 +1,4 @@
-package ev.campus_dev.api.dto;
+package ev.campus_dev.api.dto.desenvolvedor;
 
 public record AtualizacaoDesenvolvedor(
 

@@ -1,8 +1,8 @@
 package ev.campus_dev.api.controller;
 
-import ev.campus_dev.api.dto.AtualizacaoDesenvolvedor;
-import ev.campus_dev.api.dto.CadastroDesenvolvedor;
-import ev.campus_dev.api.dto.ListagemDesenvolvedor;
+import ev.campus_dev.api.dto.desenvolvedor.AtualizacaoDesenvolvedor;
+import ev.campus_dev.api.dto.desenvolvedor.CadastroDesenvolvedor;
+import ev.campus_dev.api.dto.desenvolvedor.ListagemDesenvolvedor;
 import ev.campus_dev.api.models.desenvolvedor.Desenvolvedor;
 import ev.campus_dev.api.models.desenvolvedor.DesenvolvedorRepository;
 import jakarta.transaction.Transactional;

@@ -1,4 +1,4 @@
-package ev.campus_dev.api.dto;
+package ev.campus_dev.api.dto.desenvolvedor;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

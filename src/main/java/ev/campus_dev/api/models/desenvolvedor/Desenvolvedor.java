@@ -1,7 +1,7 @@
 package ev.campus_dev.api.models.desenvolvedor;
 
-import ev.campus_dev.api.dto.AtualizacaoDesenvolvedor;
-import ev.campus_dev.api.dto.CadastroDesenvolvedor;
+import ev.campus_dev.api.dto.desenvolvedor.AtualizacaoDesenvolvedor;
+import ev.campus_dev.api.dto.desenvolvedor.CadastroDesenvolvedor;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

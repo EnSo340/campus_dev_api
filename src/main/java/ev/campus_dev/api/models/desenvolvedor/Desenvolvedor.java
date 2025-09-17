@@ -16,7 +16,7 @@ public class Desenvolvedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;  // identificador único
+    private long id;
 
     private String nomeCompleto;
     private String email;
@@ -28,31 +28,31 @@ public class Desenvolvedor {
     private int dataDeCadastro;
 
     public Desenvolvedor(CadastroDesenvolvedor dadosDesenvolvedor) {
-        this.nomeCompleto = dadosDesenvolvedor.id_nomeCompleto();
-        this.email = dadosDesenvolvedor.id_email();
-        this.anoDeNasc = dadosDesenvolvedor.id_anoDeNasc();
+        this.nomeCompleto = dadosDesenvolvedor.nomeCompleto();
+        this.email = dadosDesenvolvedor.email();
+        this.anoDeNasc = dadosDesenvolvedor.anoDeNasc();
         this.senha = dadosDesenvolvedor.senha();
-        this.curso = dadosDesenvolvedor.id_curso();
-        this.semestre = dadosDesenvolvedor.id_semestre();
+        this.curso = dadosDesenvolvedor.curso();
+        this.semestre = dadosDesenvolvedor.semestre();
         this.skills = dadosDesenvolvedor.skills();
         this.dataDeCadastro = getDataDeCadastro();
     }
 
     public void atualizarDesenvolvedor(AtualizacaoDesenvolvedor dados) {
-        if (dados.id_nomeCompleto() != null) {
-            this.nomeCompleto = dados.id_nomeCompleto();
+        if (dados.nomeCompleto() != null) {
+            this.nomeCompleto = dados.nomeCompleto();
         }
-        if (dados.id_email() != null) {
-            this.email = dados.id_email();
+        if (dados.email() != null) {
+            this.email = dados.email();
         }
-        if (dados.id_curso() != null) {
-            this.curso = dados.id_curso();
+        if (dados.curso() != null) {
+            this.curso = dados.curso();
         }
-        if (dados.id_skills() != null) {
-            this.skills = dados.id_skills();
+        if (dados.skills() != null) {
+            this.skills = dados.skills();
         }
-        if (dados.id_semestre() != null) {
-            this.semestre = dados.id_semestre();
+        if (dados.semestre() != null) {
+            this.semestre = dados.semestre();
         }
     }
 }

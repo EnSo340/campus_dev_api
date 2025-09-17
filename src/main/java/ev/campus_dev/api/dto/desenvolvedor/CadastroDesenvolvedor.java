@@ -11,18 +11,18 @@ public record CadastroDesenvolvedor(
 
 
         @NotNull
-        String id_nomeCompleto,
+        String nomeCompleto,
         @Email
-        String id_email,
+        String email,
         @NotBlank
-        int id_anoDeNasc,
+        int anoDeNasc,
         @NotBlank
         @Pattern(regexp = "\\d{11}" )
         String senha,
         @NotNull
-        String id_curso,
+        String curso,
         @NotNull
-        String id_semestre,
+        String semestre,
         @NotNull
         String skills,
         @NotBlank

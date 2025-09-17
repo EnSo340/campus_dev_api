@@ -7,5 +7,5 @@ senha=VARCHAR(255) NOT NULL,
 curso= VARCHAR(100) NOT NULL,
 semestre= VARCHAR(50),
 skills= VARCHAR(255),
-data_de_cadastro= INT NOT NULL
+data_de_cadastro= DATE
 );

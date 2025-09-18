@@ -4,7 +4,7 @@ import ev.campus_dev.api.dto.desenvolvedor.AtualizacaoDesenvolvedor;
 import ev.campus_dev.api.dto.desenvolvedor.CadastroDesenvolvedor;
 import ev.campus_dev.api.dto.desenvolvedor.ListagemDesenvolvedor;
 import ev.campus_dev.api.models.desenvolvedor.Desenvolvedor;
-import ev.campus_dev.api.models.desenvolvedor.DesenvolvedorRepository;
+import ev.campus_dev.api.repositories.DesenvolvedorRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

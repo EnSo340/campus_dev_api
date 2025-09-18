@@ -1,7 +1,7 @@
 package ev.campus_dev.api.controller;
 
 import ev.campus_dev.api.models.usuario.Usuario;
-import ev.campus_dev.api.models.usuario.UsuarioRepository;
+import ev.campus_dev.api.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

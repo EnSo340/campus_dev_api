@@ -6,7 +6,8 @@ public record AtualizacaoUsuario(
         String nomeCompleto,
         String tipoDeMercado,
         String email,
-        String senha
+        String senha,
+        String role
 
 
 ) {

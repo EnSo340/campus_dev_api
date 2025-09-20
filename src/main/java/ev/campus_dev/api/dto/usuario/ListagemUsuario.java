@@ -6,7 +6,6 @@ import java.util.Date;
 public record ListagemUsuario(
         Long id,
         String nomeCompleto,
-        String tipoDeMercado,
         String email,
         Date dataCadastro
 ) {
@@ -14,7 +13,6 @@ public record ListagemUsuario(
         this(
                 usuario.getId_user(),
                 usuario.getNomeCompleto(),
-                usuario.getTipoDeMercado(),
                 usuario.getEmail(),
                 usuario.getDataCadastro()
         );

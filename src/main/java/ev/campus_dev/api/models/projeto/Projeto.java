@@ -3,6 +3,7 @@ package ev.campus_dev.api.models.projeto;
 
 import ev.campus_dev.api.dto.projetos.AtualizacaoProjeto;
 import ev.campus_dev.api.dto.projetos.CadastroProjeto;
+import ev.campus_dev.api.models.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,15 +21,25 @@ public class Projeto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    Long id_projeto;
-    String titulo;
-    String descricao;
-    String linguagemTecnologia;
-    int qndPessoasNecessarias;
-    String status;
-    String dataCricao;
-    String prazoEntrega;
-    String linkConvite;
+    private Long id_projeto;
+    private String titulo;
+    private String descricao;
+    private String linguagemTecnologia;
+    private int qndPessoasNecessarias;
+    private String status;
+    private String dataCricao;
+    private String prazoEntrega;
+    private String linkConvite;
+
+    // relacionamento com cliente (quem pede)
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Usuario cliente;
+
+    // relacionamento com desenvolvedor (quem executa)
+    @ManyToOne
+    @JoinColumn(name = "desenvolvedor_id")
+    private Usuario desenvolvedor;
 
     public Projeto(CadastroProjeto dados) {
     }

@@ -1,4 +1,4 @@
-package ev.campus_dev.api.dto.desenvolvedor;
+package ev.campus_dev.api.dto.desenvolvedor.desenvolvedor;
 
 public record ListagemDesenvolvedor(
 

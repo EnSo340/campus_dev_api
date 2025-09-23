@@ -1,12 +1,11 @@
-package ev.campus_dev.api.dto.projetos;
+package ev.campus_dev.api.dtos.projetos_dto;
 
-public record CadastroProjeto(
+public record AtualizacaoProjeto(
         String titulo,
         String descricao,
         String linguagemTecnologia,
         Integer qndPessoasNecessarias,
         String status,
-        String dataCricao,
         String prazoEntrega,
         String linkConvite
-) {}
+) { }

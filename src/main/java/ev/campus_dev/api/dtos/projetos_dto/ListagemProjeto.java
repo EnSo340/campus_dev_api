@@ -1,4 +1,4 @@
-package ev.campus_dev.api.dto.projetos;
+package ev.campus_dev.api.dtos.projetos_dto;
 
 import java.util.Date;
 

@@ -1,13 +1,15 @@
 package ev.campus_dev.api.models.cliente;
 
-import ev.campus_dev.api.dto.desenvolvedor.cliente.AtualizacaoCliente;
-import ev.campus_dev.api.dto.desenvolvedor.cliente.CadastroCliente;
-import ev.campus_dev.api.dto.desenvolvedor.cliente.ListagemCliente;
+import ev.campus_dev.api.dtos.cliente_dto.AtualizacaoCliente;
+import ev.campus_dev.api.dtos.cliente_dto.CadastroCliente;
+import ev.campus_dev.api.dtos.cliente_dto.ListagemCliente;
 import ev.campus_dev.api.models.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Entity (name = "cliente")
 @Table(name = "clientes")
@@ -21,13 +23,13 @@ public class Cliente {
     private Long id;
     @OneToOne
     @MapsId
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
     private Usuario usuario;
     private String tipoDeMercado;
     private String nomeEmpresa;
     private String telefone;
+    private LocalDateTime dataDeCadastro;
 
-    // Métodos corrigidos para usar os acessadores de Record
     public void atualizarDados(AtualizacaoCliente dados) {
         if (dados.tipoDeMercado() != null) {
             this.tipoDeMercado = dados.tipoDeMercado();

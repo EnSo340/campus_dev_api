@@ -1,6 +1,7 @@
-package ev.campus_dev.api.dto.desenvolvedor.cliente;
+package ev.campus_dev.api.dtos.cliente_dto;
 
-public record ListagemCliente(
+public record AtualizacaoCliente(
+
 
         String tipoDeMercado,
         String nomeEmpresa,

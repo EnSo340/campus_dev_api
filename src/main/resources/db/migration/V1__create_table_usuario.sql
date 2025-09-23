@@ -1,4 +1,3 @@
-
 CREATE TABLE usuarios (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nome_completo VARCHAR(150) NOT NULL,

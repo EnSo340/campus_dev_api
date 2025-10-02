@@ -1,4 +1,4 @@
-package ev.campus_dev.api.controller;
+package ev.campus_dev.api.controllers;
 
 import ev.campus_dev.api.models.cliente.Cliente;
 import ev.campus_dev.api.models.usuario.Usuario;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -32,7 +32,7 @@ public class ClienteController {
     public ResponseEntity<Cliente> cadastrar(@RequestBody Cliente cliente) {
         Usuario usuario = cliente.getUsuario();
         usuario.setRole("CLIENTE");
-        usuario.setDataCadastro(new Date());
+        usuario.setDataCadastro(LocalDateTime.now());
         usuarioRepository.save(usuario);
 
         Cliente salvo = clienteRepository.save(cliente);

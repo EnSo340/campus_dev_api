@@ -1,11 +1,11 @@
-package ev.campus_dev.api.controller;
+package ev.campus_dev.api.controllers;
 
 import ev.campus_dev.api.models.projeto.Projeto;
 import ev.campus_dev.api.models.cliente.Cliente;
 import ev.campus_dev.api.repositories.ProjetoRepository;
 import ev.campus_dev.api.repositories.ClienteRepository;
-import ev.campus_dev.api.dto.projetos.CadastroProjeto;
-import ev.campus_dev.api.dto.projetos.AtualizacaoProjeto;
+import ev.campus_dev.api.dtos.projetos_dto.CadastroProjeto;
+import ev.campus_dev.api.dtos.projetos_dto.AtualizacaoProjeto;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

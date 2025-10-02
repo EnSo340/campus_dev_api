@@ -1,64 +1,44 @@
 package ev.campus_dev.api.models.usuario;
 
-import ev.campus_dev.api.dto.usuario.AtualizacaoUsuario;
-import ev.campus_dev.api.dto.usuario.CadastroUsuario;
+import ev.campus_dev.api.dtos.usuario_dto.AtualizacaoUsuario;
+import ev.campus_dev.api.dtos.usuario_dto.CadastroUsuario;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 @Entity(name = "usuario")
-@Table(name= "usuarios")
+@Table(name = "usuarios")
 @Getter
 @Setter
-@EqualsAndHashCode
-
-
-
-
+@EqualsAndHashCode(of = "idUsuario")
+@NoArgsConstructor //
 public class Usuario {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_user;
+    private long id;
+
     private String nomeCompleto;
     private String email;
     private String senha;
-    private Date dataCadastro;
-    private String role; // CLIENTE, DESENVOLVEDOR, AMBO
-
-public void atualizarDados (AtualizacaoUsuario dadosUsuario) {
+    private LocalDateTime dataCadastro;
+    private String role;
 
 
-    if (dadosUsuario.nomeCompleto() != null) {
+    public Usuario(CadastroUsuario dadosUsuario) {
         this.nomeCompleto = dadosUsuario.nomeCompleto();
-    }
-    if (dadosUsuario.email() != null) {
         this.email = dadosUsuario.email();
-    }
-    if (dadosUsuario.senha() != null) {
         this.senha = dadosUsuario.senha();
-    }
-    if (dadosUsuario.role() !=null ) {
+        this.dataCadastro = LocalDateTime.now();
         this.role = dadosUsuario.role();
     }
-}
-
-public void cadastrarDados (CadastroUsuario dadosUsuario) {
-
-    this.nomeCompleto = dadosUsuario.nomeCompleto();
-    this.curso = dadosUsuario.curso();
-    this.curso = dadosDesenvolvedor.curso();
-    this.curso = dadosDesenvolvedor.curso();
 
 
-}
+    }
 
 
-
-
-
-}

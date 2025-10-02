@@ -1,9 +1,14 @@
-package ev.campus_dev.api.dto.usuario;
+package ev.campus_dev.api.dtos.usuario_dto;
 
-public record CadastroUsuario(
+public record AtualizacaoUsuario(
+
+
         String nomeCompleto,
         String tipoDeMercado,
         String email,
         String senha,
         String role
-) {}
+
+
+) {
+}

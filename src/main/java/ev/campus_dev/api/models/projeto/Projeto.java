@@ -1,12 +1,14 @@
 package ev.campus_dev.api.models.projeto;
 
 
-import ev.campus_dev.api.dto.projetos.AtualizacaoProjeto;
-import ev.campus_dev.api.dto.projetos.CadastroProjeto;
+import ev.campus_dev.api.dtos.projetos_dto.AtualizacaoProjeto;
+import ev.campus_dev.api.dtos.projetos_dto.CadastroProjeto;
 import ev.campus_dev.api.models.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Entity(name = "projeto")
 @Table(name = "projetos")
@@ -27,7 +29,7 @@ public class Projeto {
     private String linguagemTecnologia;
     private int qndPessoasNecessarias;
     private String status;
-    private String dataCricao;
+    private LocalDateTime dataDeCadastro;
     private String prazoEntrega;
     private String linkConvite;
 

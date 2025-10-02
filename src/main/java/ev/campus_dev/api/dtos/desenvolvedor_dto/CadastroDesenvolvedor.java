@@ -1,9 +1,11 @@
-package ev.campus_dev.api.dto.desenvolvedor.desenvolvedor;
+package ev.campus_dev.api.dtos.desenvolvedor_dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+
+import java.time.LocalDateTime;
 
 public record CadastroDesenvolvedor(
 
@@ -26,7 +28,7 @@ public record CadastroDesenvolvedor(
         @NotNull
         String skills,
         @NotBlank
-        int dataDeCadastro
+        LocalDateTime dataDeCadastro
 
 
 

@@ -1,20 +1,23 @@
-package ev.campus_dev.api.dto.usuario;
+package ev.campus_dev.api.dtos.usuario_dto;
 
 import ev.campus_dev.api.models.usuario.Usuario;
-import java.util.Date;
+
+import java.time.LocalDateTime;
 
 public record ListagemUsuario(
-        Long id,
+        Long id_user,
         String nomeCompleto,
         String email,
-        Date dataCadastro
+        LocalDateTime dataCadastro,
+        String role
 ) {
     public ListagemUsuario(Usuario usuario) {
         this(
-                usuario.getId_user(),
+                usuario.getId(),
                 usuario.getNomeCompleto(),
                 usuario.getEmail(),
-                usuario.getDataCadastro()
+                usuario.getDataCadastro(),
+                usuario.getRole()
         );
     }
 }

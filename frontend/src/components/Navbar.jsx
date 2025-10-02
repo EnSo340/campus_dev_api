@@ -19,7 +19,7 @@ const Navbar = ({ user, onLogout }) => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <Code className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold text-gray-900">UniProjects</span>
+              <span className="text-xl font-bold text-gray-900">CampusDevs</span>
             </Link>
           </div>
 

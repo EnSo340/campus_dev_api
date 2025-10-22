@@ -2,36 +2,43 @@ package ev.campus_dev.api.dtos.desenvolvedor_dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-
-import java.time.LocalDateTime;
+import jakarta.validation.constraints.Size;
 
 public record CadastroDesenvolvedor(
-
-
-
-
-        @NotNull
+        @NotBlank(message = "Nome completo é obrigatório")
         String nomeCompleto,
-        @Email
+
+        @NotBlank(message = "Email é obrigatório")
+        @Email(message = "Formato de email inválido")
         String email,
-        @NotBlank
-        int anoDeNasc,
-        @NotBlank
-        @Pattern(regexp = "\\d{11}" )
+
+        @NotBlank(message = "Senha é obrigatória")
+        @Size(min = 6, message = "A senha deve ter no mínimo 6 caracteres")
         String senha,
-        @NotNull
+
+        // Campos que podem ser nulos no cadastro e preenchidos depois no perfil
         String curso,
-        @NotNull
         String semestre,
-        @NotNull
-        String skills,
-        @NotBlank
-        LocalDateTime dataDeCadastro
+        String skills
+) {}
 
 
+//
+//        @NotNull
+//        String nomeCompleto,
+//        @Email
+//        String email,
+//        @NotBlank
+//        int anoDeNasc,
+//        @NotBlank
+//        @Pattern(regexp = "\\d{11}" )
+//        String senha,
+//        @NotNull
+//        String curso,
+//        @NotNull
+//        String semestre,
+//        @NotNull
+//        String skills,
+//        @NotBlank
+//        LocalDateTime dataDeCadastro
 
-
-) {
-}

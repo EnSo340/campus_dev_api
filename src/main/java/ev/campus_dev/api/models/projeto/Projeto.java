@@ -1,21 +1,24 @@
 package ev.campus_dev.api.models.projeto;
 
 
+import java.util.Set;
+import ev.campus_dev.api.models.desenvolvedor.Desenvolvedor;
 import ev.campus_dev.api.dtos.projetos_dto.AtualizacaoProjeto;
 import ev.campus_dev.api.dtos.projetos_dto.CadastroProjeto;
 import ev.campus_dev.api.models.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import java.util.Set;
+import java.util.HashSet;
 import java.time.LocalDateTime;
 
 @Entity(name = "projeto")
 @Table(name = "projetos")
 @Getter
 @Setter
-
-
+@NoArgsConstructor
 public class Projeto {
 
 
@@ -38,12 +41,21 @@ public class Projeto {
     @JoinColumn(name = "cliente_id")
     private Usuario cliente;
 
-    // relacionamento com desenvolvedor (quem executa)
-    @ManyToOne
-    @JoinColumn(name = "desenvolvedor_id")
-    private Usuario desenvolvedor;
+//    // relacionamento com desenvolvedor (quem executa)
+//    @ManyToOne
+//    @JoinColumn(name = "desenvolvedor_id")
+//    private Usuario desenvolvedor;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "projetos_desenvolvedores",
+            joinColumns = @JoinColumn(name = "projeto_id"),
+            inverseJoinColumns = @JoinColumn(name = "desenvolvedor_id")
+    )
+    private Set<Desenvolvedor> desenvolvedores = new HashSet<>();
 
     public Projeto(CadastroProjeto dados) {
+        //construtor (se precisar)
     }
 
 
